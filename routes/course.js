@@ -9,5 +9,6 @@ courseRouter
 
 courseRouter.get("/remove/:id", courseController.remove);
 courseRouter.post("/edit/:id", courseController.edit);
+courseRouter.get("/search", courseController.search);
 
 module.exports = courseRouter;

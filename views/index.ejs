@@ -74,7 +74,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="sidebar-link">
+            <a href="/courses" class="sidebar-link">
               <span>
                 <i class="fa fa-tag"></i>
               </span>
@@ -105,10 +105,12 @@
         <!-- Navbar -->
         <nav class="navbar">
           <div class="navbar-search">
-            <input type="text" name="" id="" placeholder="جستجو کنید...." />
+            <form id="searchFrom" action="/courses/search" method="get">
+            <input type="text" name="course" id="searchBar" placeholder="جستجو کنید...." />
             <span class="navbar-search-icon">
               <i class="fa fa-search"></i>
             </span>
+          </form>
           </div>
           <div class="navbar-user-avatar">
             <img src="/images/avatar/avatar.png" alt="" />
@@ -134,7 +136,7 @@
 
           <!-- Courses List -->
           <ul class="courses-list">
-            <% courses.forEach(function(course) { %>
+            <% courses.forEach((course)=>{ %>
             <li class="courses-item">
               <div class="courses-img-title">
                 <img src="/images/courses/PWA.jpg" alt="" class="courses-img" />
