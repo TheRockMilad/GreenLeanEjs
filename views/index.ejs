@@ -38,7 +38,22 @@
       </div>
     </div>ظ
     <!----------------------------------End modal -------------------------------- -->
-
+    <div class="modal-container" id="edit-course-modal">
+      <div class="modal-content">
+        <h1 class="modal-title">ویرایش دوره</h1>
+        <form action="/courses/edit" class="edit-user-form" method="post" id="edit-course-form">
+          <div class="input-field">
+            <span><i class="fa fa-tag"></i></span>
+            <input type="text" name="title" id="id" class="edit-course-title" placeholder="نام دوره" spellcheck="false" />
+            <input type="hidden" name="courseId" class="edit-course-id" />
+          </div>
+    
+          <button type="submit" class="edit-course-btn update-btn btn">
+            ویرایش دوره
+          </button>
+        </form>
+      </div>
+    </div>
     <!----------------------------------End modal -------------------------------- -->
 
     <div class="container">
@@ -126,7 +141,7 @@
                 <h5 class="courses-name"><%= course.title %></h5>
               </div>
               <div class="courses-btns">
-                <a href="" class="courses-btn-edit btn">ویرایش</a>
+                <a href="/courses/edit/<%= course._id %>" class="courses-btn-edit btn">ویرایش</a>
                 <a
                   href="/courses/remove/<%= course._id %>"
                   class="courses-btn-delete btn"

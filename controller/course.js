@@ -49,5 +49,13 @@ exports.remove = async (req, res) => {
 };
 
 exports.edit = async (req, res) => {
-  //code
-};
+  const {title} = req.body
+  const {id} = req.params
+  await coursesModel.findByIdAndUpdate({_id : id},{
+    $set :{
+      title
+    }
+  })
+  req.flash('success',"دوره با موفقیت ویرایش شد")
+  res.redirect("/courses")
+}
