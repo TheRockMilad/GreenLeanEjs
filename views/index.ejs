@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>
+        <%= title %>
+    </title>
+    <h1>this is Header</h1>
+</head>
+
+<body>
+
+    <h1>this is body</h1>
+    <div>
+        <ui>
+            <% users.forEach(user=> { %>
+                <li>
+                    <%= user.name %>
+                        <%= user.family%> => <% if (user.role==="ADMIN" ) {%> مدیر <% } else { %> کاربر <% } %>
+                </li>
+        </ui>
+        <% }) %>
+    </div>
+    <div>
+        <footer>
+            <h1>this is footer</h1>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>
