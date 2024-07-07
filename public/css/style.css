@@ -401,3 +401,15 @@ a.active {
     url("./../fonts/Shabnam-Medium-FD.ttf") format("truetype"),
     url("./../fonts/Shabnam-Medium-FD.woff") format("woff");
 }
+
+.error {
+  background-color: #ea868f;
+  color: #fff;
+  padding: 12px;
+}
+
+.success {
+  background-color: #68e221;
+  color: #fff;
+  padding: 12px;
+}

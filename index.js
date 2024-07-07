@@ -2,26 +2,28 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const path = require("path");
+const courses = require("./routes/course");
+require("./configs/db");
+const flash = require("express-flash");
+const session = require("express-session");
 
+app.use(
+  session({
+    secret: "123456",
+    resave: false, 
+    saveUninitialized: false,
+  })
+);
+app.use(flash());
+
+app.use(express.json());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-const users = [
-  { name: "Zahra", family: "Hosseini", age: 24, role: "ADMIN" },
-  { name: "Milad", family: "Hosseini", age: 33, role: "USER" },
-  { name: "Hamid", family: "Heidar", age: 32, role: "ADMIN" },
-  { name: "Ali", family: "Okhovat", age: 32, role: "ADMIN" },
-];
-
-app.get("/", (req, res) => {
-  res.render("index", {
-    users,
-    title : "EJS"
-  });
-});
+app.use("/courses", courses);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
