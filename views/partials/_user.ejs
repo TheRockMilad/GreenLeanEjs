@@ -1,0 +1,10 @@
+<div>
+    <ui>
+        <% users.forEach(user=> { %>
+            <li>
+                <%= user.name %>
+                    <%= user.family%> => <% if (user.role==="ADMIN" ) {%> مدیر <% } else { %> کاربر <% } %>
+            </li>
+    </ui>
+    <% }) %>
+</div>
