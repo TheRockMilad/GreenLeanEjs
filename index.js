@@ -25,6 +25,12 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use("/courses", courses);
 
+app.use((req,res,error)=>{
+  res.status(500).json({
+    ErrorMessage : error
+  })
+})
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server run on port ${PORT}`);
